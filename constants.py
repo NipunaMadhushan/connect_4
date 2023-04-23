@@ -1,0 +1,13 @@
+NO_ROWS = 6
+NO_COLUMNS = 7
+
+EMPTY = 0
+PLAYER = 1
+BOT = 2
+
+EMPTY_CELL_VALUE = 1
+SAME_CELL_VALUE = 1
+
+EMPTY_CELL_TYPE = "empty_cell"
+GREY_CELL_TYPE = "grey_cell"
+BLACK_CELL_TYPE = "black_cell"
