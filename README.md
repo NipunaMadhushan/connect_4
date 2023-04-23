@@ -13,3 +13,17 @@ If all the racks are filled completely with tokens where no player has connected
 ## How to play
 In this game, you play with the computer.
 Player can choose the rack which is empty or not filled completely by clicking the green button at the top of the rack.
+
+## How to run the game
+
+#### Prerequisites
+
+* python 3.x
+* numpy (install using `pip install numpy`)
+* colorama (install using `pip install colorama`)
+* pillow (install using `pip install pillow`)
+
+Download the source code from here. Then run the `Connect 4.py` file in python.
+
+You can find the windows application in [here](https://drive.google.com/drive/folders/1AUTNGBtx0dNJOsEPri9F7KN2nP_bpdOI?usp=share_link)
+
