@@ -63,8 +63,8 @@ class GUI:
 
     def __include_column_select_buttons(self):
         for j in range(NO_COLUMNS):
-            ct1 = tk.Label(self._column_button_frame, text="Column\n" + str(j + 1),
-                           font=("Arial", 6),
+            ct1 = tk.Label(self._column_button_frame, text="Rack\n" + str(j + 1),
+                           font=("Arial", 7),
                            foreground="black",
                            width=5)
 
@@ -118,7 +118,7 @@ class GUI:
                     self._game_over = True
                     self.update_info_text("Game was drawn!", "brown")
             else:
-                self.update_info_text(f"Column {column + 1} is completely filled.\nPlease make another valid move",
+                self.update_info_text(f"Rack {column + 1} is completely filled.\nPlease make another valid move",
                                       "red")
 
     def on_new_game_button_clicked(self):
