@@ -401,11 +401,6 @@ class AIBot:
         maximum_cell_value = 0
         next_column = -1
 
-        # -----------------------------
-        # TODO
-        # Implement checking one step a head checking whether the current move provides winning move for opponent
-        # -----------------------------
-
         # Evaluate double blocking move with maximum cell value
         if len(double_blocking_moves) > 0:
             for j in double_blocking_moves:
@@ -422,6 +417,12 @@ class AIBot:
         # Evaluate random move with maximum cell value
         for j in range(NO_COLUMNS):
             next_cell_row = stack_next_cells[j]
+
+            # -----------------------------
+            # TODO
+            # Implement checking one step a head whether the current move provides winning move for opponent
+            # -----------------------------
+
             if next_cell_row < NO_ROWS:
                 value = max(self._player_values[next_cell_row, j], self._bot_values[next_cell_row, j])
                 if value > maximum_cell_value:
