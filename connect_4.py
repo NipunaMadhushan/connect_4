@@ -187,7 +187,6 @@ class Connect4:
                 self.__print_input_error_msg()
                 self.__print_separate_line()
                 return False
-            self.no_moves += 1
             is_winning = self.__check_winning(next_column, PLAYER)
             if is_winning:
                 self.__print_board()
@@ -209,7 +208,6 @@ class Connect4:
                 self.__print_input_error_msg()
                 self.__print_separate_line()
                 return False
-            self.no_moves += 1
             is_winning = self.__check_winning(next_column, BOT)
             if is_winning:
                 self.__print_board()

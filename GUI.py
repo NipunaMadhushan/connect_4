@@ -3,6 +3,8 @@ import tkinter as tk
 from PIL import Image, ImageTk
 from connect_4 import Connect4
 from constants import *
+import os
+import sys
 
 
 class GUI:
@@ -20,10 +22,10 @@ class GUI:
         self._column_button_frame = tk.Frame(self._window)
         self._board_frame = tk.Frame(self._window)
 
-        self.GREEN_BUTTON_IMG = self.__get_image(r"images\green_button.png", 20, 20)
-        self.EMPTY_CELL_IMG = self.__get_image(r"images\empty_cell.png", 50, 50)
-        self.GREY_CELL_IMG = self.__get_image(r"images\grey_cell.png", 50, 50)
-        self.BLACK_CELL_IMG = self.__get_image(r"images\black_cell.png", 50, 50)
+        self.GREEN_BUTTON_IMG = self.__get_image(r"./images/green_button.png", 20, 20)
+        self.EMPTY_CELL_IMG = self.__get_image(r"./images/empty_cell.png", 50, 50)
+        self.GREY_CELL_IMG = self.__get_image(r"./images/grey_cell.png", 50, 50)
+        self.BLACK_CELL_IMG = self.__get_image(r"./images/black_cell.png", 50, 50)
 
         self.info_text = tk.Label(self._starting_frame, text="", font=("Arial", 15), foreground="green", width=100)
         self.cell_UIs = []
@@ -120,6 +122,7 @@ class GUI:
             else:
                 self.update_info_text(f"Rack {column + 1} is completely filled.\nPlease make another valid move",
                                       "red")
+            print("No of Moves: " + str(self._connect_4.no_moves))
 
     def on_new_game_button_clicked(self):
         self._game_over = False
