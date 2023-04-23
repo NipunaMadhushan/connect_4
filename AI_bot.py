@@ -396,6 +396,9 @@ class AIBot:
             if next_cell_row < NO_ROWS:
                 is_player_winning_double_move = self.__check_double_blocking_move(board, Coordinates(next_cell_row, j))
                 if is_player_winning_double_move:
+                    if next_cell_row + 1 < NO_ROWS and self.__check_blocking_move(board,
+                                                                                  Coordinates(next_cell_row + 1, j)):
+                        continue
                     double_blocking_moves.append(j)
 
         maximum_cell_value = 0
@@ -414,15 +417,23 @@ class AIBot:
         if next_column >= 0:
             return next_column
 
+        # Evaluate random move with maximum cell value (avoid opponent's next move to win)
+        for j in range(NO_COLUMNS):
+            next_cell_row = stack_next_cells[j]
+            if next_cell_row < NO_ROWS:
+                if next_cell_row+1 < NO_ROWS and self.__check_blocking_move(board, Coordinates(next_cell_row+1, j)):
+                    continue
+                value = max(self._player_values[next_cell_row, j], self._bot_values[next_cell_row, j])
+                if value > maximum_cell_value:
+                    maximum_cell_value = value
+                    next_column = j
+
+        if next_column >= 0:
+            return next_column
+
         # Evaluate random move with maximum cell value
         for j in range(NO_COLUMNS):
             next_cell_row = stack_next_cells[j]
-
-            # -----------------------------
-            # TODO
-            # Implement checking one step a head whether the current move provides winning move for opponent
-            # -----------------------------
-
             if next_cell_row < NO_ROWS:
                 value = max(self._player_values[next_cell_row, j], self._bot_values[next_cell_row, j])
                 if value > maximum_cell_value:
