@@ -1,7 +1,7 @@
 # import tkinter module
 import tkinter as tk
 from PIL import Image, ImageTk
-from connect_4 import Connect4
+from connect_4_game import Connect4
 from constants import *
 import os
 import sys
@@ -99,6 +99,7 @@ class GUI:
                 cell.grid(row=i, column=j, padx=1, pady=1)
                 cell_UI_row.append(cell)
             self.cell_UIs.append(cell_UI_row)
+        self.cell_UIs.reverse()
 
     def __make_move(self, column):
         if not self._game_over:

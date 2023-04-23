@@ -401,6 +401,11 @@ class AIBot:
         maximum_cell_value = 0
         next_column = -1
 
+        # -----------------------------
+        # TODO
+        # Implement checking one step a head checking whether the current move provides winning move for opponent
+        # -----------------------------
+
         # Evaluate double blocking move with maximum cell value
         if len(double_blocking_moves) > 0:
             for j in double_blocking_moves:
