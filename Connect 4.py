@@ -103,6 +103,7 @@ class GUI:
 
     def __make_move(self, column):
         if not self._game_over:
+            self.update_info_text("", "green")
             status = self._connect_4.update_on_player_move(column)
             if status:
                 self.update_cell_UI(self._connect_4.stack_next_cells[column] - 1, column, GREY_CELL_TYPE)
