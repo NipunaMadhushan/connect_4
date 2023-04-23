@@ -25,5 +25,5 @@ Player can choose the rack which is empty or not filled completely by clicking t
 
 Download the source code from here. Then run the `Connect 4.py` file in python.
 
-You can find the windows application in [here](https://drive.google.com/file/d/13_1ejwML6lSnQ_pa79kJqtO7D5jmK6sN/view?usp=share_link)
+You can also find the windows application in [here](https://drive.google.com/file/d/13_1ejwML6lSnQ_pa79kJqtO7D5jmK6sN/view?usp=share_link)
 
